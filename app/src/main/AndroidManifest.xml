@@ -12,7 +12,22 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".cadastroActivity"
+            android:name=".Desenvolvedores"
+            android:exported="false" />
+        <activity
+            android:name=".Configuracao"
+            android:exported="false" />
+        <activity
+            android:name=".Tutorial"
+            android:exported="false" />
+        <activity
+            android:name=".CarregarJogo"
+            android:exported="false" />
+        <activity
+            android:name=".NovoJogo"
+            android:exported="false" />
+        <activity
+            android:name=".SobreoJogo"
             android:exported="false" />
         <activity
             android:name=".menuActivity"

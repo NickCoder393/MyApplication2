@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import java.text.BreakIterator;
-
 public class menuActivity extends AppCompatActivity {
 
     @Override
@@ -16,27 +14,53 @@ public class menuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        Button buttonIrCadastro;
+        Button buttonIrSobreoJogo;
+        Button buttonIrNovoJogo;
+        Button buttonIrCarregarJogo;
+        Button buttonIrTutorial;
+        Button buttonIrConfiguracao;
+        Button buttonIrDesenvolvedores;
 
-        buttonIrCadastro=findViewById(R.id.buttonIrCadastro);
-
-        buttonIrCadastro.setOnClickListener(new View.OnClickListener() {
+        buttonIrSobreoJogo=findViewById(R.id.buttonIrSobreoJogo);
+        buttonIrConfiguracao=findViewById(R.id.buttonIrConfiguracao);
+        buttonIrTutorial= findViewById(R.id.buttonIrTutorial);
+        buttonIrDesenvolvedores= findViewById(R.id.buttonIrDesenvolvedores);
+        buttonIrCarregarJogo=findViewById(R.id.buttonIrCarregarJogo);
+        buttonIrNovoJogo=findViewById(R.id.buttonIrNovoJogo);
+        buttonIrSobreoJogo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(menuActivity.this, cadastroActivity.class);
-
-
-                BreakIterator etNome;
-                in.putExtra("nome", etNome.getText().toString());
-                BreakIterator etEmail;
-                in.putExtra("email", etEmail.getText().toString());
-                BreakIterator etCpf;
-                in.putExtra("cpf", etCpf.getText().toString());
-
-                String nome = in.getStringExtra("nome");
-                String email = in.getStringExtra("email");
-
+                Intent in = new Intent(menuActivity.this, SobreoJogo.class);
                 startActivity(in);
+            }
+        });
+        buttonIrConfiguracao.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
+                Intent in = new Intent(menuActivity.this,SobreoJogo.class);
+            }
+        });
+
+        buttonIrCarregarJogo.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
+                Intent in = new Intent(menuActivity.this,CarregarJogo.class);
+            }
+        });
+
+        buttonIrTutorial.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
+                Intent in = new Intent(menuActivity.this,Tutorial.class);
+            }
+        });
+
+        buttonIrNovoJogo.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
+                Intent in = new Intent(menuActivity.this,NovoJogo.class);
+            }
+        });
+
+        buttonIrDesenvolvedores.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view) {
+                Intent in = new Intent(menuActivity.this,Desenvolvedores.class);
             }
         });
 
